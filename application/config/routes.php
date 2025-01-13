@@ -14,4 +14,4 @@ $route['translate_uri_dashes'] = FALSE;
 $route['Adminlogin'] = 'Adminlogin';
 $route['admin'] = 'Adminlogin';
 $route['adminlogin/validatelogin'] = 'adminlogin/validatelogin';
-$route['AdminDashboard'] = 'AdminDashboad';
+$route['AdminDashboard'] = 'AdminDashboard';
