@@ -3,7 +3,7 @@
         <div id="sidebar-menu">
             <ul class="metismenu list-unstyled" id="side-menu">
                 <li class="menu-title" key="t-menu">Menu</li>
-                <li><a href="<?= base_url('marital-status'); ?>" key="t-user-list"><i
+                <li><a href="<?= base_url('category_all'); ?>" key="t-user-list"><i
                             class='bx bxs-cog'></i><span>Category</span></a></li>
                 <li><a href="<?= base_url('education'); ?>" key="t-user-list"><i class='bx bxs-cog'></i><span>Sub
                             Category</span></a></li>

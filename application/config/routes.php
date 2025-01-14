@@ -16,3 +16,6 @@ $route['admin'] = 'Adminlogin';
 $route['adminlogin/validatelogin'] = 'adminlogin/validatelogin';
 $route['AdminDashboard'] = 'AdminDashboard';
 $route['dashboard'] = 'AdminDashboard/dashboard';
+$route['category_all'] = 'AdminDashboard/category_all';
+$route['categoryAdd'] = 'AdminDashboard/category_add';
+$route['productImageD'] = 'AdminDashboard/productImageD';
