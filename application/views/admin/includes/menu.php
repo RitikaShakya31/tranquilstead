@@ -5,7 +5,7 @@
                 <li class="menu-title" key="t-menu">Menu</li>
                 <li><a href="<?= base_url('category_all'); ?>" key="t-user-list"><i
                             class='bx bxs-cog'></i><span>Category</span></a></li>
-                <li><a href="<?= base_url('education'); ?>" key="t-user-list"><i class='bx bxs-cog'></i><span>Sub
+                <li><a href="<?= base_url('subcategory_all'); ?>" key="t-user-list"><i class='bx bxs-cog'></i><span>Sub
                             Category</span></a></li>
                 <li>
                     <a href="<?= base_url('logout'); ?>" class=" waves-effect">

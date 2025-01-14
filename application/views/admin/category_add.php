@@ -12,7 +12,6 @@
         <div class="main-content">
             <div class="page-content">
                 <div class="container-fluid">
-
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-sm-flex align-items-center justify-content-between">
@@ -47,6 +46,18 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            <!-- <div class="col-lg-12 mb-3">
+                                                <div class="row">
+                                                    <label for="example-text-input"
+                                                        class="col-md-3 col-form-label">Category
+                                                        Banner</label>
+                                                    <div class="col-md-9">
+                                                        <input class="form-control " type="file" name="banner"
+                                                            <?= $image == "" ? 'required' : '' ?>>
+                                                        <h6>Image Size: 1296*300</h6>
+                                                    </div>
+                                                </div>
+                                            </div> -->
                                             <div class="col-lg-12 mb-3">
                                                 <div class="row">
                                                     <label for="example-text-input"
@@ -61,34 +72,34 @@
                                         </div>
                                         <div class="col-lg-12  mt-2">
                                             <div class="row">
-                                                <?php                                             
-                                                    if ($image_all) {
-                                                        foreach ($image_all as $img) {
-                                                            $numImage = getNumRows('slider_image', "category_id = '" . decryptId($id) . "'");
-                                                            $imgId = encryptId($img['category_id']);
-                                                            $imgData = $img['image_path'];
-                                                            ?>
-                                                            <div class="col-lg-4 mb-2">
-                                                                <div
-                                                                    style="width: 100%; border: 1px solid #aeaeae; border-radius: 5px">
-                                                                    <img src="<?= base_url("upload/category/") . $imgData ?>"
-                                                                        style="width: 100%;height: 180px; margin-top: 10px">
-                                                                    <div style="margin-top: 10px; text-align: center">
-                                                                        <?php
-                                                                        if ($numImage != 1) {
-                                                                            ?>
-                                                                            <a class="btn btn-danger" style="margin-right: 5px"
-                                                                                onclick="return confirm('Are you sure to delete this image?')"
-                                                                                href="<?= base_url("productImageD/$imgId/$imgData") ?>">
-                                                                                <i class="fa fa-trash"></i> Delete
-                                                                            </a>
-                                                                            <?php
-                                                                        }
+                                                <?php
+                                                if ($image_all) {
+                                                    foreach ($image_all as $img) {
+                                                        $numImage = getNumRows('slider_image', "category_id = '" . decryptId($id) . "'");
+                                                        $imgId = ($img['category_id']);
+                                                        $imgData = $img['image_path'];
+                                                        ?>
+                                                        <div class="col-lg-4 mb-2">
+                                                            <div
+                                                                style="width: 100%; border: 1px solid #aeaeae; border-radius: 5px">
+                                                                <img src="<?= base_url("upload/category/") . $imgData ?>"
+                                                                    style="width: 100%;height: 180px; margin-top: 10px">
+                                                                <div style="margin-top: 10px; text-align: center">
+                                                                    <?php
+                                                                    if ($numImage != 1) {
                                                                         ?>
-                                                                    </div>
+                                                                        <a class="btn btn-danger" style="margin-right: 5px"
+                                                                            onclick="return confirm('Are you sure to delete this image?')"
+                                                                            href="<?= base_url("productImageD/$imgId/$imgData") ?>">
+                                                                            <i class="fa fa-trash"></i> Delete
+                                                                        </a>
+                                                                        <?php
+                                                                    }
+                                                                    ?>
                                                                 </div>
                                                             </div>
-                                                            <?php
+                                                        </div>
+                                                        <?php
                                                     }
                                                 }
                                                 ?>

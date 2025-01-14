@@ -19,3 +19,5 @@ $route['dashboard'] = 'AdminDashboard/dashboard';
 $route['category_all'] = 'AdminDashboard/category_all';
 $route['categoryAdd'] = 'AdminDashboard/category_add';
 $route['productImageD'] = 'AdminDashboard/productImageD';
+$route['subcategory_all'] = 'AdminDashboard/subcategory_all';
+$route['subCategoryAdd'] = 'AdminDashboard/subCategoryAdd';
