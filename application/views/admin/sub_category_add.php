@@ -1,5 +1,4 @@
 <?php include('includes/header.php'); ?>
-
 <body data-sidebar="dark">
     <div id="layout-wrapper">
         <?php include('includes/top-header.php'); ?>

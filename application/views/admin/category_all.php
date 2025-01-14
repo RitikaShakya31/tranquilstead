@@ -31,6 +31,7 @@
                                                 <th>Sr no.</th>
                                                 <th>Catogory Name</th>
                                                 <th>Catogory Sub Name </th>
+                                                <th>Total Sub Category</th>
                                                 <th style="width: 20%">Action</th>
                                             </tr>
                                         </thead>
@@ -40,11 +41,16 @@
                                                 $i = 0;
                                                 foreach ($category_all as $all) {
                                                     $id = encryptId($all['category_id']);
+                                                    $getTotalSubCate = getNumRows('sub_category', "category_id = '" . $all['category_id'] . "'");
                                                     ?>
                                                     <tr>
                                                         <td><?= ++$i; ?></td>
                                                         <td><?= $all['category_name'] ?></td>
                                                         <td><?= $all['sub_name'] ?></td>
+                                                        <td>
+                                                            <span class="badge rounded-pill bg-warning"
+                                                                style="font-size: 18px;"><?= $getTotalSubCate; ?></span>
+                                                        </td>
                                                         <td>
                                                             <a href="<?= base_url("categoryAdd?id=$id"); ?>"
                                                                 class="btn btn-success"><i class="fa fa-edit"></i> Edit</a>
