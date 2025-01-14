@@ -1,4 +1,5 @@
 <?php include('includes/header.php'); ?>
+
 <body data-sidebar="dark">
     <div id="layout-wrapper">
         <?php include('includes/top-header.php'); ?>
@@ -20,6 +21,22 @@
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-lg-6 mb-3">
+                                                <label class="form-label">Category Name</label>
+                                                <select class="form-control select" name="category_id">
+                                                    <option>Select Category</option>
+                                                    <?php
+                                                    $c = getRowsByMoreIdWithOrder('category', "is_delete = '1'", "category_name", 'ASC');
+                                                    foreach ($c as $cate) {
+                                                        ?>
+                                                        <option value="<?= $cate['category_id'] ?>" <?php if ($category_id == $cate['category_id']) {
+                                                              echo 'selected';
+                                                          } ?>><?= ucwords($cate['category_name']) ?></option>
+                                                        <?php
+                                                    }
+                                                    ?>
+                                                </select>
+                                            </div>
+                                            <div class="col-lg-6 mb-3">
                                                 <label class="form-label">Sub Category Name</label>
                                                 <input class="form-control" type="text" name="sub_category_name"
                                                     required value="<?= $sub_category_name ?>">
@@ -31,23 +48,29 @@
                                             </div>
                                             <div class="col-lg-12 mb-3">
                                                 <label class="form-label">Sub Category Description</label>
-                                                <textarea name="heading" id="editor"></textarea>
+                                                <textarea name="sub_category_description" id="editor"><?= $sub_category_description?></textarea>
                                             </div>
                                             <div class="col-lg-6 mb-3">
                                                 <label for="example-text-input" class="col-md-3 col-form-label">Sub
                                                     Category Image</label>
                                                 <div class="col-md-12">
-                                                    <input class="form-control subcategory_image" type="file"
+                                                    <input class="form-control" type="file"
                                                         name="image" <?= $image == "" ? 'required' : '' ?>>
                                                 </div>
+                                                <img class="temp_image" src="<?= base_url('upload/subcat') . '/' . $image ?>"
+                                            style=" height: 300px;">
+                                        <input type="hidden" value="<?= $image ?>" name="temp_image">
                                             </div>
                                             <div class="col-lg-6 mb-3">
                                                 <label for="example-text-input" class="col-md-3 col-form-label">Parallax
                                                     Effect Image</label>
                                                 <div class="col-md-12">
-                                                    <input class="form-control subcategory_image" type="file"
-                                                        name="image" <?= $image == "" ? 'required' : '' ?>>
+                                                    <input class="form-control " type="file"
+                                                        name="effect_image" <?= $image == "" ? 'required' : '' ?>>
                                                 </div>
+                                                <img class="temp_image" src="<?= base_url('upload/subcat') . '/' . $effect_image ?>"
+                                            style=" height: 300px;">
+                                        <input type="hidden" value="<?= $image ?>" name="temp_image">
                                             </div>
                                         </div>
                                     </div>
