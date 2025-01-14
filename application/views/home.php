@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html>
+
 <head>
 	<!-- set the encoding of your site -->
 	<meta charset="utf-8">
@@ -8,13 +8,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Tranquilstead</title>
 	<!-- include the site google fonts -->
-	<link type="text/css" rel="stylesheet" media="all" href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900,100italic,300italic,400italic,700italic,900italic%7cMontserrat%7cCrimson+Text:400,400italic,600,600italic,700,700italic%7cRaleway:400,200,300,500,600,700,800,900%7cMerriweather:400,300italic,300,400italic,700,700italic,900'>
+	<link type="text/css" rel="stylesheet" media="all"
+		href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900,100italic,300italic,400italic,700italic,900italic%7cMontserrat%7cCrimson+Text:400,400italic,600,600italic,700,700italic%7cRaleway:400,200,300,500,600,700,800,900%7cMerriweather:400,300italic,300,400italic,700,700italic,900'>
 	<!-- include bootstrap's stylesheet -->
 	<link type="text/css" rel="stylesheet" media="all" href="assets/css/bootstrap.css">
 	<!-- include the site stylesheet -->
 	<link type="text/css" rel="stylesheet" media="all" href="assets/css/all.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
+
 <body>
 	<!-- main container of all the page elements -->
 	<div id="wrapper">
@@ -25,7 +27,8 @@
 				<div class="row">
 					<div class="col-xs-12">
 						<!-- logo of the page -->
-						<div class="logo"><a href="index.php"><img class="img-responsive" src="assets/images/Tranquilstead_Logo.png" ></a></div>
+						<div class="logo"><a href="index.php"><img class="img-responsive"
+									src="assets/images/Tranquilstead_Logo.png"></a></div>
 						<!-- nav of the page -->
 						<div id="nav">
 							<a href="#" class="nav-opener">
@@ -41,88 +44,30 @@
 								</form>
 								<ul class="list-inline">
 									<li>
-										<!-- <a href="index.php">HOME </a> -->
-										<!-- <div class="nav-drop">
-											<ul class="list-unstyled">
-												<li><a href="index-v2.html">HOME STYLE 2</a></li>
-												<li><a href="index-v3.html">HOME STYLE 3</a></li>
-											</ul>
-										</div> -->
 									</li>
-									
 									<li><a href="religious.php">RELIGIOUS</a></li>
 									<li><a href="lifestyle.php">LIFESTYLE </a></li>
 									<li><a href="travel.php">TRAVELLING </a></li>
 									<li><a href="industry.php">INDUSTRY </a></li>
 									<li><a href="upcoming.php">UPCOMING PROJECTS </a></li>
-
-<!-- 									
-									<li><a href="contact.php">contact</a></li> -->
 								</ul>
-								<!-- <div class="nav-posts">
-									<strong class="title"><a href="#">POPULAR POSTS</a></strong>
-									<div class="banner-gallery">
-										<img src="http://placehold.it/385x260" alt="image description"/>
-										<div class="post-over">
-											<div class="box">
-												<div class="block">
-													<h3><a href="post.html">DEFAULT POST</a></h3>
-													<ul class="add-nav list-inline">
-														<li>by <a href="#">Admin</a></li>
-														<li><time datetime="2015-01-01">Aug 28, 2015</time></li>
-														<li><a href="#">TRAVELING</a></li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="banner-gallery">
-										<img src="http://placehold.it/385x260" alt="image description"/>
-										<div class="post-over">
-											<div class="box">
-												<div class="block">
-													<h3><a href="http://market.envato.com/">LINK POST</a></h3>
-													<ul class="add-nav list-inline">
-														<li>by <a href="#">Admin</a></li>
-														<li><time datetime="2015-01-01">Aug 28, 2015</time></li>
-														<li><a href="#">TRAVELING</a></li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="banner-gallery">
-										<img src="http://placehold.it/385x260" alt="image description"/>
-										<div class="post-over quotes">
-											<div class="box">
-												<div class="block">
-													<blockquote class="post-quotes">
-														<p><a href="post.html">&ldquo;QUOTES ARE AMAZING&rdquo;</a></p>
-														<cite title="Source Title">John Doe</cite>
-													</blockquote>
-													<ul class="add-nav list-inline">
-														<li><time datetime="2015-01-01">Aug 28, 2015</time></li>
-														<li>QUOTE</li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div> -->
 								<ul class="social-networks1 list-inline" style="font-size:30px">
 									<!-- <li><a href="#"><i class="fa fa-facebook"></i></a></li> -->
-									<li><a href="https://www.instagram.com/tranquilstead.in/profilecard/?igsh=MWQycWd1MmI0eTNqMg=="><i class="fa-brands fa-square-instagram"></i></a></li>
+									<li><a
+											href="https://www.instagram.com/tranquilstead.in/profilecard/?igsh=MWQycWd1MmI0eTNqMg=="><i
+												class="fa-brands fa-square-instagram"></i></a></li>
 									<!-- <li><a href="#"><i class="fa fa-google-plus"></i></a></li> -->
 								</ul>
-								<span class="copyrights">&copy; 2024 <a href="#">Tranquilstead</a>. All rights reserved.</span>
+								<span class="copyrights">&copy; 2024 <a href="#">Tranquilstead</a>. All rights
+									reserved.</span>
 							</div>
 						</div>
 					</div>
 				</div>
 			</header>
 
-            
-<?php include "./include/header.php"?>	
+
+			<?php include "./include/header.php" ?>
 			<!-- contain main informative part of the site -->
 			<main id="main" role="main">
 				<div class="container-fluid">
@@ -134,11 +79,13 @@
 									<div class="mask">
 										<div class="slideset">
 											<div class="slide">
-												<div class="bg-stretch"><img src="assets/images/3.jpg" alt="image description"/></div>
+												<div class="bg-stretch"><img src="assets/images/3.jpg"
+														alt="image description" /></div>
 												<div class="post-over">
 													<div class="box">
 														<div class="block">
-															<h1 class="heading"><a href="whyNashik.php">WHY NASHIK ??</a></h1>
+															<h1 class="heading"><a href="whyNashik.php">WHY NASHIK
+																	??</a></h1>
 															<ul class="add-nav list-inline">
 																<li><a href="travel.php">TRAVELING</a></li>
 															</ul>
@@ -147,11 +94,13 @@
 												</div>
 											</div>
 											<div class="slide">
-												<div class="bg-stretch"><img src="assets/images/2 (2).jpg" alt="image description"/></div>
+												<div class="bg-stretch"><img src="assets/images/2 (2).jpg"
+														alt="image description" /></div>
 												<div class="post-over">
 													<div class="box">
 														<div class="block">
-															<h2 class="heading"><a href="whyNashik.php">WHY NASHIK ??</a></h2>
+															<h2 class="heading"><a href="whyNashik.php">WHY NASHIK
+																	??</a></h2>
 															<ul class="add-nav list-inline">
 																<li><a href="lifestyle.php">LIFESTYLE</a></li>
 															</ul>
@@ -160,11 +109,13 @@
 												</div>
 											</div>
 											<div class="slide">
-												<div class="bg-stretch"><img src="assets/images/1.jpg" alt="image description"/></div>
+												<div class="bg-stretch"><img src="assets/images/1.jpg"
+														alt="image description" /></div>
 												<div class="post-over">
 													<div class="box">
 														<div class="block">
-															<h2 class="heading"><a href="whyNashik.php">WHY NASHIK ??</a></h2>
+															<h2 class="heading"><a href="whyNashik.php">WHY NASHIK
+																	??</a></h2>
 															<ul class="add-nav list-inline">
 																<li><a href="religious.php">RELIGIOUS</a></li>
 															</ul>
@@ -190,7 +141,8 @@
 									<div class="mask">
 										<div class="slideset">
 											<div class="slide">
-												<div class="bg-stretch"><img src="assets/images/ganpati.jpg" alt="image description"/></div>
+												<div class="bg-stretch"><img src="assets/images/ganpati.jpg"
+														alt="image description" /></div>
 												<div class="post-over">
 													<div class="box">
 														<div class="block">
@@ -203,7 +155,8 @@
 												</div>
 											</div>
 											<div class="slide">
-												<div class="bg-stretch"><img src="assets/images/trambakB.jpg" alt="image description"/></div>
+												<div class="bg-stretch"><img src="assets/images/trambakB.jpg"
+														alt="image description" /></div>
 												<div class="post-over">
 													<div class="box">
 														<div class="block">
@@ -216,7 +169,8 @@
 												</div>
 											</div>
 											<div class="slide">
-												<div class="bg-stretch"><img src="assets/images/gondeshwar.jpg" alt="image description"/></div>
+												<div class="bg-stretch"><img src="assets/images/gondeshwar.jpg"
+														alt="image description" /></div>
 												<div class="post-over">
 													<div class="box">
 														<div class="block">
@@ -229,7 +183,8 @@
 												</div>
 											</div>
 											<div class="slide">
-												<div class="bg-stretch"><img src="assets/images/jainmandir/jain.jpg" alt="image description"/></div>
+												<div class="bg-stretch"><img src="assets/images/jainmandir/jain.jpg"
+														alt="image description" /></div>
 												<div class="post-over">
 													<div class="box">
 														<div class="block">
@@ -242,7 +197,8 @@
 												</div>
 											</div>
 											<div class="slide">
-												<div class="bg-stretch"><img src="assets/images/pandavleni/caves.jpg" alt="image description"/></div>
+												<div class="bg-stretch"><img src="assets/images/pandavleni/caves.jpg"
+														alt="image description" /></div>
 												<div class="post-over">
 													<div class="box">
 														<div class="block">
@@ -257,7 +213,8 @@
 												</div>
 											</div>
 											<div class="slide">
-												<div class="bg-stretch"><img src="assets/images/kalaram1.jpg" alt="image description"/></div>
+												<div class="bg-stretch"><img src="assets/images/kalaram1.jpg"
+														alt="image description" /></div>
 												<div class="post-over">
 													<div class="box">
 														<div class="block">
@@ -278,19 +235,21 @@
 								</section>
 							</div>
 						</div>
-						<div class="col-sm-6 col-xs-12 two-cols" >
+						<div class="col-sm-6 col-xs-12 two-cols">
 							<div class="row">
-							<section class="main-gallery">
+								<section class="main-gallery">
 									<div class="mask">
 										<div class="slideset">
 											<div class="slide">
-												<div class="bg-stretch"><img src="assets/images/sadhana/sadhana.jpeg" alt="image description"/></div>
+												<div class="bg-stretch"><img src="assets/images/sadhana/sadhana.jpeg"
+														alt="image description" /></div>
 												<div class="post-over">
 													<div class="box">
 														<div class="block">
 															<h2><a href="lifeStyle.php">LIFE STYLE</a></h2>
 															<ul class="add-nav list-inline">
-																<li><a href="sadhnamisal.php">SADHANA CHULIVARCHI MISAL</a></li>
+																<li><a href="sadhnamisal.php">SADHANA CHULIVARCHI
+																		MISAL</a></li>
 																<!-- <li><time datetime="2024-03-08">Aug 3, 2024</time></li>
 																<li><a href="#">LIFE STYLE</a></li> -->
 															</ul>
@@ -299,7 +258,8 @@
 												</div>
 											</div>
 											<div class="slide">
-												<div class="bg-stretch"><img src="assets/images/mauli/samosa.jpg" alt="image description"/></div>
+												<div class="bg-stretch"><img src="assets/images/mauli/samosa.jpg"
+														alt="image description" /></div>
 												<div class="post-over">
 													<div class="box">
 														<div class="block">
@@ -314,7 +274,8 @@
 												</div>
 											</div>
 											<div class="slide">
-												<div class="bg-stretch"><img src="assets/images/sham/sham1.jpg" alt="image description"/></div>
+												<div class="bg-stretch"><img src="assets/images/sham/sham1.jpg"
+														alt="image description" /></div>
 												<div class="post-over">
 													<div class="box">
 														<div class="block">
@@ -325,8 +286,10 @@
 														</div>
 													</div>
 												</div>
-											</div><div class="slide">
-												<div class="bg-stretch"><img src="assets/images/tushar/unnamed.webp" alt="image description"/></div>
+											</div>
+											<div class="slide">
+												<div class="bg-stretch"><img src="assets/images/tushar/unnamed.webp"
+														alt="image description" /></div>
 												<div class="post-over">
 													<div class="box">
 														<div class="block">
@@ -337,8 +300,10 @@
 														</div>
 													</div>
 												</div>
-											</div><div class="slide">
-												<div class="bg-stretch"><img src="assets/images/balasaheb/misal.jpg" alt="image description"/></div>
+											</div>
+											<div class="slide">
+												<div class="bg-stretch"><img src="assets/images/balasaheb/misal.jpg"
+														alt="image description" /></div>
 												<div class="post-over">
 													<div class="box">
 														<div class="block">
@@ -349,14 +314,17 @@
 														</div>
 													</div>
 												</div>
-											</div><div class="slide">
-												<div class="bg-stretch"><img src="assets/images/grape/unnamed.jpg" alt="image description"/></div>
+											</div>
+											<div class="slide">
+												<div class="bg-stretch"><img src="assets/images/grape/unnamed.jpg"
+														alt="image description" /></div>
 												<div class="post-over">
 													<div class="box">
 														<div class="block">
 															<h2><a href="lifeStyle.php">LIFE STYLE</a></h2>
 															<ul class="add-nav list-inline">
-																<li> <a href="grape_embassy.php">GRAPE EMBASSY & ZATKA MISAL</a></li>
+																<li> <a href="grape_embassy.php">GRAPE EMBASSY & ZATKA
+																		MISAL</a></li>
 															</ul>
 														</div>
 													</div>
@@ -371,19 +339,20 @@
 						</div>
 					</div>
 				</div>
-				
+
 
 
 				<div class="container-fluid">
 					<div class="row" style="display:flex">
-						<div class="col-sm-4 col-xs-12 two-cols" >
+						<div class="col-sm-4 col-xs-12 two-cols">
 							<div class="row">
 								<!-- main-gallery of the page -->
 								<section class="main-gallery">
 									<div class="mask">
 										<div class="slideset">
 											<div class="slide">
-												<div class="bg-stretch"><img src="assets/images/york/york.jpg" alt="image description"/></div>
+												<div class="bg-stretch"><img src="assets/images/york/york.jpg"
+														alt="image description" /></div>
 												<div class="post-over">
 													<div class="box">
 														<div class="block">
@@ -396,7 +365,8 @@
 												</div>
 											</div>
 											<div class="slide">
-												<div class="bg-stretch"><img src="assets/images/soma/soma1.jpg" alt="image description"/></div>
+												<div class="bg-stretch"><img src="assets/images/soma/soma1.jpg"
+														alt="image description" /></div>
 												<div class="post-over">
 													<div class="box">
 														<div class="block">
@@ -409,7 +379,8 @@
 												</div>
 											</div>
 											<div class="slide">
-												<div class="bg-stretch"><img src="assets/images/sula/sula3.jpg" alt="image description"/></div>
+												<div class="bg-stretch"><img src="assets/images/sula/sula3.jpg"
+														alt="image description" /></div>
 												<div class="post-over">
 													<div class="box">
 														<div class="block">
@@ -422,7 +393,8 @@
 												</div>
 											</div>
 											<div class="slide">
-												<div class="bg-stretch"><img src="assets/images/pahine/water.jpg" alt="image description"/></div>
+												<div class="bg-stretch"><img src="assets/images/pahine/water.jpg"
+														alt="image description" /></div>
 												<div class="post-over">
 													<div class="box">
 														<div class="block">
@@ -435,20 +407,23 @@
 												</div>
 											</div>
 											<div class="slide">
-												<div class="bg-stretch"><img src="assets/images/someshwar/water.jpg" alt="image description"/></div>
+												<div class="bg-stretch"><img src="assets/images/someshwar/water.jpg"
+														alt="image description" /></div>
 												<div class="post-over">
 													<div class="box">
 														<div class="block">
 															<h2><a href="travel.php">TRAVELLING</a></h2>
 															<ul class="add-nav list-inline">
-																<li> <a href="someshwar.php">SOMESHWAR WATERFALL</a></li>
+																<li> <a href="someshwar.php">SOMESHWAR WATERFALL</a>
+																</li>
 															</ul>
 														</div>
 													</div>
 												</div>
 											</div>
 											<div class="slide">
-												<div class="bg-stretch"><img src="assets/images/ashoka/image.jpg" alt="image description"/></div>
+												<div class="bg-stretch"><img src="assets/images/ashoka/image.jpg"
+														alt="image description" /></div>
 												<div class="post-over">
 													<div class="box">
 														<div class="block">
@@ -467,13 +442,14 @@
 								</section>
 							</div>
 						</div>
-						<div class="col-sm-4 col-xs-12 two-cols" >
+						<div class="col-sm-4 col-xs-12 two-cols">
 							<div class="row">
-							<section class="main-gallery">
+								<section class="main-gallery">
 									<div class="mask">
 										<div class="slideset">
 											<div class="slide">
-												<div class="bg-stretch"><img src="assets/images/pharma.jpg" alt="image description"/></div>
+												<div class="bg-stretch"><img src="assets/images/pharma.jpg"
+														alt="image description" /></div>
 												<div class="post-over">
 													<div class="box">
 														<div class="block">
@@ -488,19 +464,20 @@
 												</div>
 											</div>
 										</div>
-									</div>									
+									</div>
 								</section>
 							</div>
 						</div>
 
-						<div class="col-sm-4 col-xs-12 two-cols" >
+						<div class="col-sm-4 col-xs-12 two-cols">
 							<div class="row">
 								<!-- main-gallery of the page -->
 								<section class="main-gallery">
 									<div class="mask">
 										<div class="slideset">
 											<div class="slide">
-												<div class="bg-stretch"><img src="assets/images/upcoming.jpg" alt="image description"/></div>
+												<div class="bg-stretch"><img src="assets/images/upcoming.jpg"
+														alt="image description" /></div>
 												<div class="post-over">
 													<div class="box">
 														<div class="block">
@@ -513,7 +490,7 @@
 														</div>
 													</div>
 												</div>
-											</div>		
+											</div>
 										</div>
 									</div>
 								</section>
@@ -521,22 +498,22 @@
 						</div>
 					</div>
 				</div>
-				
+
 				<div class="container-fluid">
-				
-				<div class="container-fluid">
-					<div class="row">
-						<!-- two-cols of the page -->
+
+					<div class="container-fluid">
+						<div class="row">
+							<!-- two-cols of the page -->
+						</div>
 					</div>
-				</div>
 			</main>
-			
-				</div>
-			</div>
+
 		</div>
 	</div>
+	</div>
+	</div>
 	<!-- related-posts of the page -->
-<!-- <div class="container related-posts">
+	<!-- <div class="container related-posts">
 	<div class="row">
 		<div class="col-xs-12">
 			
@@ -641,14 +618,14 @@
 		</div>
 	</div>
 </div> -->
-<!-- footer-holder of the page -->
-<div class="footer-holder " >
-	<!-- <body background="./assets/images/texture.avif"> -->
-	<!-- <div style="transform: scale(1.1);" class="parallax-frame"><img src="assets/images/york.webp" height="500px"  alt="Image Description"></div>  -->
-	<!-- <div class="post-over"></div> -->
-	
+	<!-- footer-holder of the page -->
+	<div class="footer-holder ">
+		<!-- <body background="./assets/images/texture.avif"> -->
+		<!-- <div style="transform: scale(1.1);" class="parallax-frame"><img src="assets/images/york.webp" height="500px"  alt="Image Description"></div>  -->
+		<!-- <div class="post-over"></div> -->
+
 		<aside class="row footer-aside rs-footer">
-			
+
 			<div class="col-sm-4 col-xs-12 column" style="margin:30px 0 ;">
 				<!-- <h3><span class="txt"><a href="#"></a></span></h3> -->
 				<ul class="info-nav list-inline" style="margin-top:30px">
@@ -666,7 +643,8 @@
 			</div>
 			<div class="col-sm-4 col-xs-12 column social">
 				<div class="footer-logo">
-					<div class="logo"><a href="#"><img class="img-responsive" src="assets/images/tranquil_logo.png"></a></div>
+					<div class="logo"><a href="#"><img class="img-responsive" src="assets/images/tranquil_logo.png"></a>
+					</div>
 					<p></p><br><br>
 				</div>
 
@@ -676,8 +654,9 @@
 								class="fa-brands fa-square-instagram"></i></a></li>
 				</ul> -->
 			</div>
-				<div class="copy" style="margin:55px 0">&copy; 2024 <a href="#" style="color:red">Tranquil Stead</a>. All rights reserved.</div>
-	
+			<div class="copy" style="margin:55px 0">&copy; 2024 <a href="#" style="color:red">Tranquil Stead</a>. All
+				rights reserved.</div>
+
 			<!-- <div class="col-sm-6 col-xs-12" style="padding-top:30px">
 				
 				<ul id="instagram-posts" class="instagram-nav list-inline">
@@ -871,7 +850,6 @@
 				});
 			});
 		</script>
-		</body>
+</body>
 
-		</html>
-	
+</html>

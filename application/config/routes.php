@@ -15,3 +15,4 @@ $route['Adminlogin'] = 'Adminlogin';
 $route['admin'] = 'Adminlogin';
 $route['adminlogin/validatelogin'] = 'adminlogin/validatelogin';
 $route['AdminDashboard'] = 'AdminDashboard';
+$route['dashboard'] = 'AdminDashboard/dashboard';
