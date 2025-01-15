@@ -106,7 +106,11 @@ Primary use:	Company Portfolio
 
 .logo img,
 .nav-posts .banner-gallery img,
-.post-images .img-box img,
+.post-images .img-box img {
+	width: 340px;
+	display: block;
+	height: auto;
+}
 .post-images .img-box2 img {
 	width: 100%;
 	display: block;
@@ -4326,7 +4330,7 @@ Primary use:	Company Portfolio
 }
 
 .post-images .img-box2 {
-	float: right;
+	/* float: right; */
 	width: 65.8%;
 }
 

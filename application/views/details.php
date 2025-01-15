@@ -38,16 +38,29 @@
                             <p><?= $getSub['sub_category_heading'] ?> </p>
                         </div>
                         <div class="post-images">
-                            <div class="alignleft">
-                                <div class="img-box">
-                                    <a href="#"><img src="./images/ganpati/navshya.png" alt="image description"></a>
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <?php if ($allimg) {
+                                        $count = 0;
+                                        foreach ($allimg as $img) {
+                                            if ($count < 2) { ?>
+                                                <div class="img-box">
+                                                    <img src="<?= base_url('upload/subcat/') . $img['image_path'] ?>"
+                                                        alt="image description">
+                                                </div>
+                                                <?php $count++;
+                                            }
+                                        }
+                                    } ?>
                                 </div>
-                                <div class="img-box">
-                                    <a href="#"><img src="images/ganpati/anna.png" alt="image description"></a>
+                                <div class="col-xs-8">
+                                    <?php if ($allimg && count($allimg) > 2) { ?>
+                                        <div class="img-box2">
+                                            <img src="<?= base_url('upload/subcat/') . $allimg[2]['image_path'] ?>"
+                                                alt="image description">
+                                        </div>
+                                    <?php } ?>
                                 </div>
-                            </div>
-                            <div class="img-box2">
-                                <a href="#"><img src="images/ganpati/chandicha.jpeg" alt="image description"></a>
                             </div>
                         </div>
                         <p><?= $getSub['sub_category_description'] ?></p>

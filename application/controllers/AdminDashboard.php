@@ -179,7 +179,7 @@ class AdminDashboard extends CI_Controller
 								$_FILES['files']['tmp_name'] = $_FILES['moreimage']['tmp_name'][$i];
 								$_FILES['files']['error'] = $_FILES['moreimage']['error'][$i];
 								$_FILES['files']['size'] = $_FILES['moreimage']['size'][$i];
-								$picture = fullImage('files', 'upload/category/'); // इमेज सेविंग फंक्शन
+								$picture = fullImage('files', 'upload/subcat/'); // इमेज सेविंग फंक्शन
 								if ($picture) {
 									$post3['image_path'] = $picture;
 									$post3['sub_category_id'] = isset($decrypt_id) ? $decrypt_id : $p_id;
