@@ -7,6 +7,7 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 
+$route['datails/(:any)'] = 'Home/subCateDatails/$1';
 
 
 

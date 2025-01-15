@@ -1,10 +1,9 @@
 <!-- contain main informative part of the site -->
 <main id="main" role="main">
-	<div class="container-fluid">
+	<!-- <div class="container-fluid">
 		<div class="row">
 			<div class="col-xs-12">
 				<div class="row">
-					<!-- main-gallery of the page -->
 					<section class="main-gallery">
 						<div class="mask">
 							<div class="slideset">
@@ -61,7 +60,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
 	<!-- ---dynamic content--- -->
 	<div class="container-fluid">
@@ -72,8 +71,15 @@
 				$count = 0;
 				foreach ($cat as $c) {
 					$getPro = $this->CommonModal->getRowByMoreId('slider_image', ['category_id' => $c['category_id']]);
+					$getSub = $this->CommonModal->getRowByMoreId('sub_category', ['category_id' => $c['category_id']]);
 					// Determine the column size based on the count
-					$col_size = ($count < 2) ? 'col-sm-6' : 'col-sm-4';
+					if ($count == 0) {
+						$col_size = 'col-sm-12';
+					} elseif ($count < 3) {
+						$col_size = 'col-sm-6';
+					} else {
+						$col_size = 'col-sm-4';
+					}
 					?>
 					<div class="<?= $col_size; ?> col-xs-12 two-cols">
 						<div class="row">
@@ -81,18 +87,24 @@
 								<div class="mask">
 									<div class="slideset">
 										<?php if (!empty($getPro)) {
-											foreach ($getPro as $pro) {
-												 ?>
+											foreach ($getPro as $pro) { ?>
 												<div class="slide">
 													<div class="bg-stretch">
-														<img src="<?= base_url('upload/category/') . $pro['image_path']; ?>" alt="<?= $c['category_name']; ?>" />
+														<img src="<?= base_url('upload/category/') . $pro['image_path']; ?>"
+															alt="<?= $c['category_name']; ?>" />
 													</div>
 													<div class="post-over">
 														<div class="box">
 															<div class="block">
-																<h2><a href="<?= strtolower(str_replace(' ', '_', $c['category_name'])); ?>.php"><?= strtoupper($c['category_name']); ?></a></h2>
+																<h2><a
+																		href="<?= strtolower(str_replace(' ', '_', $c['category_name'])); ?>.php"><?= strtoupper($c['category_name']); ?></a>
+																</h2>
 																<ul class="add-nav list-inline">
-																	<li><a href="#"><?= $c['sub_name']; ?></a></li>
+																	<?php if (!empty($getSub)) {
+																		foreach ($getSub as $sub) { ?>
+																			<li><a href="<?= base_url('datails/') . $sub['sub_category_id']?>"><?= $sub['sub_category_name']; ?></a></li>
+																		<?php }
+																	} ?>
 																</ul>
 															</div>
 														</div>
@@ -102,12 +114,15 @@
 										} else { ?>
 											<div class="slide">
 												<div class="bg-stretch">
-													<img src="<?= !empty($c['banner']) ? $c['banner'] : 'assets/images/default.jpg'; ?>" alt="<?= $c['category_name']; ?>" />
+													<img src="<?= !empty($c['banner']) ? $c['banner'] : 'assets/images/default.jpg'; ?>"
+														alt="<?= $c['category_name']; ?>" />
 												</div>
 												<div class="post-over">
 													<div class="box">
 														<div class="block">
-															<h2><a href="<?= strtolower(str_replace(' ', '_', $c['category_name'])); ?>.php"><?= strtoupper($c['category_name']); ?></a></h2>
+															<h2><a
+																	href="<?= strtolower(str_replace(' ', '_', $c['category_name'])); ?>.php"><?= strtoupper($c['category_name']); ?></a>
+															</h2>
 															<ul class="add-nav list-inline">
 																<li><a href="#"><?= $c['sub_name']; ?></a></li>
 															</ul>
