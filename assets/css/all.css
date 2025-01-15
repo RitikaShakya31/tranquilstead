@@ -109,16 +109,15 @@ Primary use:	Company Portfolio
 }
 .nav-posts .banner-gallery img,
 .post-images .img-box img {
-	width: 340px;
+	width: 100%;
     display: block;
     height: 230px;
     object-fit: cover;
 }
 .post-images .img-box2 img {
-	width: 100%;
+	/* width: 100%; */
 	display: block;
-	height: 500px;
-	height: auto;
+	height: 460px;
 }
 
 .bg-stretch,

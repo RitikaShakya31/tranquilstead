@@ -45,8 +45,7 @@
                                         foreach ($allimg as $img) {
                                             if ($count < 2) { ?>
                                                 <div class="img-box">
-                                                    <img src="<?= base_url('upload/subcat/') . $img['image_path'] ?>"
-                                                        alt="image description">
+                                                    <img src="<?= base_url('upload/subcat/') . $img['image_path']?>" alt="image description">
                                                 </div>
                                                 <?php $count++;
                                             }
@@ -56,8 +55,7 @@
                                 <div class="col-xs-8">
                                     <?php if ($allimg && count($allimg) > 2) { ?>
                                         <div class="img-box2">
-                                            <img src="<?= base_url('upload/subcat/') . $allimg[2]['image_path'] ?>"
-                                                alt="image description">
+                                            <img src="<?= base_url('upload/subcat/') . $allimg[2]['image_path']?>" alt="image description">
                                         </div>
                                     <?php } ?>
                                 </div>

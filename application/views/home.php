@@ -1,18 +1,13 @@
-<!-- contain main informative part of the site -->
 <main id="main" role="main">
 	<div class="container-fluid">
 		<div class="row">
 			<?php
-			// Check if $cat array exists and is not empty
 			if (!empty($cat)) {
 				$count = 0;
 				foreach ($cat as $c) {
 					$getPro = $this->CommonModal->getRowByMoreId('slider_image', ['category_id' => $c['category_id']]);
 					$getSub = $this->CommonModal->getRowByMoreId('sub_category', ['category_id' => $c['category_id'], 'is_delete' => '1']);
-					// Determine the column size based on the count
-					if ($count == 0) {
-						$col_size = 'col-sm-12';
-					} elseif ($count < 3) {
+					if ($count < 2) {
 						$col_size = 'col-sm-6';
 					} else {
 						$col_size = 'col-sm-4';
@@ -77,7 +72,6 @@
 					$count++;
 				}
 			} else {
-				// Display message if no categories are available
 				echo '<p>No data available to display.</p>';
 			}
 			?>

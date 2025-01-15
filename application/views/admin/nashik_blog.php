@@ -20,38 +20,21 @@
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-lg-6 mb-3">
-                                                <label class="form-label">Category Name</label>
-                                                <select class="form-control select" name="category_id">
-                                                    <option>Select Category</option>
-                                                    <?php
-                                                    $c = getRowsByMoreIdWithOrder('category', "is_delete = '1'", "category_name", 'ASC');
-                                                    foreach ($c as $cate) {
-                                                        ?>
-                                                        <option value="<?= $cate['category_id'] ?>" <?php if ($category_id == $cate['category_id']) {
-                                                              echo 'selected';
-                                                          } ?>><?= ucwords($cate['category_name']) ?></option>
-                                                        <?php
-                                                    }
-                                                    ?>
-                                                </select>
+                                                <label class="form-label">Heading</label>
+                                                <input class="form-control" type="text" name="heading"
+                                                    required value="<?= $heading ?>">
                                             </div>
                                             <div class="col-lg-6 mb-3">
-                                                <label class="form-label">Sub Category Name</label>
-                                                <input class="form-control" type="text" name="sub_category_name"
-                                                    required value="<?= $sub_category_name ?>">
-                                            </div>
-                                            <div class="col-lg-6 mb-3">
-                                                <label class="form-label">Sub Category Heading</label>
-                                                <input class="form-control" type="text" name="sub_category_heading"
-                                                    required value="<?= $sub_category_heading ?>">
+                                                <label class="form-label">Sub Heading</label>
+                                                <input class="form-control" type="text" name="sub_heading"
+                                                    required value="<?= $sub_heading ?>">
                                             </div>
                                             <div class="col-lg-12 mb-3">
-                                                <label class="form-label">Sub Category Description</label>
-                                                <textarea name="sub_category_description" id="editor"><?= $sub_category_description?></textarea>
+                                                <label class="form-label">Description</label>
+                                                <textarea name="description" id="editor"><?= $sub_category_description?></textarea>
                                             </div>
                                             <div class="col-lg-6 mb-3">
-                                                <label for="example-text-input" class="col-md-3 col-form-label">Sub
-                                                    Category Image</label>
+                                                <label for="example-text-input" class="col-md-3 col-form-label">Banner Image</label>
                                                 <div class="col-md-12">
                                                     <input class="form-control" type="file"
                                                         name="image" <?= $image == "" ? 'required' : '' ?>>
@@ -76,7 +59,7 @@
                                                     <label for="example-text-input"
                                                         class="col-md-3 col-form-label">More Images
                                                     </label>
-                                                    <div class="col-md-9">
+                                                    <div class="col-md-12">
                                                         <input class="form-control" type="file" multiple
                                                             <?= isset($id) ? '' : 'required' ?> name="moreimage[]">
                                                     </div>

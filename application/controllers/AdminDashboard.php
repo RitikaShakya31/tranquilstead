@@ -1,24 +1,28 @@
 <?php
-
 defined('BASEPATH') or exit('No direct script access allowed');
-
 class AdminDashboard extends CI_Controller
 {
-
 	public function index()
 	{
 		$data['profile'] = $this->profile_data;
-		$data['projectTitle'] = 'Tranquilstead';
+		$data['projectTitle'] = 'Tranquil Stead';
 		$data['menu_cat'] = 'Dashboard';
 		$data['menu_subcat'] = 'Home';
 		$data['title'] = 'Welcome! Admin';
-		// $data['register'] = $this->CommonModal->getNumRows('register', 'id IS NOT NULL');
 		$this->load->view('admin/index', $data);
+	}
+	public function nashik_blog()
+	{
+		// $get['category_all'] = $this->CommonModal->getRowByIdInOrder('category', "is_delete = '1'", 'category_name', 'ASC');
+		$get['title'] = 'Nashik Blog';
+		$get['projectTitle'] = 'Tranquil Stead';
+		$this->load->view('admin/nashik_blog', $get);
 	}
 	public function category_all()
 	{
 		$get['category_all'] = $this->CommonModal->getRowByIdInOrder('category', "is_delete = '1'", 'category_name', 'ASC');
 		$get['title'] = 'All Category';
+		$get['projectTitle'] = 'Tranquil Stead';
 		$this->load->view('admin/category_all', $get);
 	}
 
@@ -34,12 +38,14 @@ class AdminDashboard extends CI_Controller
 		$data['sub_name'] = set_value('sub_name') == false ? @$get['sub_name'] : set_value('sub_name');
 		if (isset($id)) {
 			$data['title'] = 'Edit Category';
+			$data['projectTitle'] = 'Tranquil Stead';
 		} else {
 			$data['title'] = 'Add Category';
+			$data['projectTitle'] = 'Tranquil Stead';
 		}
 		if (isset($dID)) {
 			$update = $this->CommonModal->updateRowById('category', 'category_id', decryptId($dID), array('is_delete' => '0'));
-			redirect('categoryAll');
+			redirect('category_all');
 			exit;
 		}
 		if (count($_POST) > 0) {
@@ -120,6 +126,7 @@ class AdminDashboard extends CI_Controller
 	{
 		$data['sub_category'] = $this->CommonModal->getRowByIdInOrder('sub_category', "is_delete = '1'", 'sub_category_name', 'ASC');
 		$data['title'] = "All Sub Categories";
+		$data['projectTitle'] = 'Tranquil Stead';
 		$data['setting'] = $this->setting;
 		$this->load->view('admin/subcategory_all', $data);
 	}
@@ -140,8 +147,10 @@ class AdminDashboard extends CI_Controller
 		$data['effect_image'] = set_value('effect_image') == false ? @$get['effect_image'] : set_value('effect_image');
 		if (isset($id)) {
 			$data['title'] = 'Edit Sub Category';
+			$data['projectTitle'] = 'Tranquil Stead';
 		} else {
 			$data['title'] = 'Add Sub Category';
+			$data['projectTitle'] = 'Tranquil Stead';
 		}
 		if (isset($dID)) {
 			$update = $this->CommonModal->updateRowById('sub_category', 'sub_category_id', decryptId($dID), array('is_delete' => '0'));

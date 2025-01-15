@@ -240,6 +240,23 @@ class CommonModal extends CI_Model
 			return false;
 		}
 	}
+	public function getRowByOrderWithLimit($table, $where, $orderBy, $orderType, $limit)
+	{
+		$ci = &get_instance();
+		$get = $ci->db->select()
+			->from($table)
+			->where($where)
+
+			->order_by($orderBy, $orderType)
+			->limit($limit)
+			->get();
+		if ($get->num_rows() > 0) {
+			return $get->result_array();
+		} else {
+			return false;
+		}
+	}
+
 
 	public function getSingleRowById($table, $where)
 	{

@@ -3,6 +3,8 @@
         <div id="sidebar-menu">
             <ul class="metismenu list-unstyled" id="side-menu">
                 <li class="menu-title" key="t-menu">Menu</li>
+                <li><a href="<?= base_url('nashik_blog'); ?>" key="t-user-list"><i
+                            class='bx bxs-cog'></i><span>Nashik Blog</span></a></li>
                 <li><a href="<?= base_url('category_all'); ?>" key="t-user-list"><i
                             class='bx bxs-cog'></i><span>Category</span></a></li>
                 <li><a href="<?= base_url('subcategory_all'); ?>" key="t-user-list"><i class='bx bxs-cog'></i><span>Sub

@@ -23,3 +23,4 @@ $route['categoryAdd'] = 'AdminDashboard/category_add';
 $route['productImageD'] = 'AdminDashboard/productImageD';
 $route['subcategory_all'] = 'AdminDashboard/subcategory_all';
 $route['subCategoryAdd'] = 'AdminDashboard/subCategoryAdd';
+$route['nashik_blog'] = 'AdminDashboard/nashik_blog';
