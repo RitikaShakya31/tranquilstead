@@ -8,7 +8,7 @@
 				$count = 0;
 				foreach ($cat as $c) {
 					$getPro = $this->CommonModal->getRowByMoreId('slider_image', ['category_id' => $c['category_id']]);
-					$getSub = $this->CommonModal->getRowByMoreId('sub_category', ['category_id' => $c['category_id']]);
+					$getSub = $this->CommonModal->getRowByMoreId('sub_category', ['category_id' => $c['category_id'], 'is_delete' => '1']);
 					// Determine the column size based on the count
 					if ($count == 0) {
 						$col_size = 'col-sm-12';
@@ -23,11 +23,11 @@
 							<section class="main-gallery">
 								<div class="mask">
 									<div class="slideset">
-										<?php if (!empty($getPro)) {
-											foreach ($getPro as $pro) { ?>
+										<?php if (!empty($getSub)) {
+											foreach ($getSub as $pro) { ?>
 												<div class="slide">
 													<div class="bg-stretch">
-														<img src="<?= base_url('upload/category/') . $pro['image_path']; ?>"
+														<img src="<?= base_url('upload/subcat/') . $pro['image']; ?>"
 															alt="<?= $c['category_name']; ?>" />
 													</div>
 													<div class="post-over">
@@ -37,13 +37,9 @@
 																		href="<?= base_url('listing/') . $c['category_id'] ?>"><?= strtoupper($c['category_name']); ?></a>
 																</h2>
 																<ul class="add-nav list-inline">
-																	<?php if (!empty($getSub)) {
-																		foreach ($getSub as $sub) { ?>
-																			<li><a
-																					href="<?= base_url('datails/') . $sub['sub_category_id'] ?>"><?= $sub['sub_category_name']; ?></a>
-																			</li>
-																		<?php }
-																	} ?>
+																	<li><a
+																			href="<?= base_url('datails/') . $pro['sub_category_id'] ?>"><?= $pro['sub_category_name']; ?></a>
+																	</li>
 																</ul>
 															</div>
 														</div>

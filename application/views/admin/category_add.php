@@ -49,6 +49,16 @@
                                             <div class="col-lg-12 mb-3">
                                                 <div class="row">
                                                     <label for="example-text-input"
+                                                        class="col-md-3 col-form-label">Category banner
+                                                    </label>
+                                                    <div class="col-md-9">
+                                                        <input class="form-control " type="file" name="banner">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12 mb-3">
+                                                <div class="row">
+                                                    <label for="example-text-input"
                                                         class="col-md-3 col-form-label">Slider Images
                                                     </label>
                                                     <div class="col-md-9">
@@ -57,6 +67,7 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                          
                                         </div>
                                         <div class="col-lg-12  mt-2">
                                             <div class="row">

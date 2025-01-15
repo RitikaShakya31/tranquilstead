@@ -5,7 +5,7 @@ class Home extends CI_Controller
     public function index()
     {
         $data['title'] = 'Home';
-        $data['cat'] = $this->CommonModal->getAllRowsInOrder('category' , 'category_name' , 'DESC');
+        $data['cat'] = $this->CommonModal->getAllRowsInOrder('category' , 'category_name' , 'DESC', array('is_delete' => '1'));
         $this->load->view('includes/header-link', $data);
         $this->load->view('includes/header');
         $this->load->view('home');

@@ -48,10 +48,10 @@ class AdminDashboard extends CI_Controller
 			if ($this->form_validation->run()) {
 				$post['category_name'] = trim($category_name);
 				$post['sub_name'] = trim($sub_name);
-				// if (isset($_FILES['banner']) && !empty($_FILES['banner']['name'])) {
-				// 	$banner = imageUploadWithRatio('banner', 'upload/category/', 600, 400, $data['banner']);
-				// 	$post['banner'] = $banner;
-				// }
+				if (isset($_FILES['banner']) && !empty($_FILES['banner']['name'])) {
+					$banner = imageUploadWithRatio('banner', 'upload/category/', 600, 400, $data['banner']);
+					$post['banner'] = $banner;
+				}
 				if (isset($id)) {
 					$update = $this->CommonModal->updateRowById('category', 'category_id', $decrypt_id, $post);
 					$filesCount = count($_FILES['image']['name']);
@@ -145,7 +145,7 @@ class AdminDashboard extends CI_Controller
 		}
 		if (isset($dID)) {
 			$update = $this->CommonModal->updateRowById('sub_category', 'sub_category_id', decryptId($dID), array('is_delete' => '0'));
-			redirect('subCategoryAll');
+			redirect('subcategory_all');
 			exit;
 		}
 		if (count($_POST) > 0) {

@@ -6,7 +6,7 @@
                     <div class="mask">
                         <div class="slideset">
                             <div class="slide">
-                                <div class="bg-stretch"><img src="images/religious2.jpg" alt="image description" />
+                                <div class="bg-stretch"><img src="<?= base_url('upload/category/') . $getCat['banner'] ?>" alt="image description" />
                                 </div>
                                 <div class="post-over">
                                     <div class="box">

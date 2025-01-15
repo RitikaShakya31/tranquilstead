@@ -104,16 +104,20 @@ Primary use:	Company Portfolio
 	clear: both;
 }
 
-.logo img,
+.logo img{
+	width:100%;
+}
 .nav-posts .banner-gallery img,
 .post-images .img-box img {
 	width: 340px;
-	display: block;
-	height: auto;
+    display: block;
+    height: 230px;
+    object-fit: cover;
 }
 .post-images .img-box2 img {
 	width: 100%;
 	display: block;
+	height: 500px;
 	height: auto;
 }
 
