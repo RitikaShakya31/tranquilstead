@@ -9,7 +9,7 @@
 				<div class="row">
 					<div class="col-xs-12">
 						<!-- logo of the page -->
-						<div class="logo"><a href="index.php"><img class="img-responsive"
+						<div class="logo"><a href="<?= base_url()?>"><img class="img-responsive"
 									src="<?= base_url()?>assets/images/Tranquilstead_Logo.png"></a></div>
 						<!-- nav of the page -->
 						<div id="nav">

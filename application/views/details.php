@@ -25,7 +25,6 @@
             </div>
         </div>
     </div>
-    <!-- post-info of the page -->
     <section class="post-info">
         <div class="progress-bar-holder">
             <div class="progressbar">&nbsp;</div>
@@ -37,10 +36,7 @@
                     <article class="main-post">
                         <div class="txt-box">
                             <p><?= $getSub['sub_category_heading'] ?> </p>
-
                         </div>
-
-                        <!-- post-images of the page -->
                         <div class="post-images">
                             <div class="alignleft">
                                 <div class="img-box">
@@ -56,24 +52,14 @@
                         </div>
                         <p><?= $getSub['sub_category_description'] ?></p>
                     </article>
-                    <!-- <div class="postbox-prev">
-                            <a href="#" class="post-prev"><i class="fa fa-angle-left"></i></a>
-                            <span class="post-txt">VIDEO POST</span>
-                        </div>
-                        <div class="postbox-next">
-                            <a href="#" class="post-next"><i class="fa fa-angle-right"></i></a>
-                            <span class="post-txt">AUDIO POST</span>
-                        </div> -->
                 </div>
             </div>
         </div>
     </section>
     <div class="container-fluid">
         <div class="row">
-            <!-- fullwidth-post of the page -->
             <div class="col-xs-12 fullwidth-post add">
                 <div class="row">
-                    <!-- main-gallery of the page -->
                     <div class="banner-gallery parallax-holder">
                         <div class="parallax-frame"><img
                                 src="<?= base_url('upload/subcat/') . $getSub['effect_image'] ?>" height="1333"
@@ -83,7 +69,4 @@
             </div>
         </div>
     </div>
-
-
-
 </main>

@@ -8,6 +8,7 @@ $route['translate_uri_dashes'] = FALSE;
 
 
 $route['datails/(:any)'] = 'Home/subCateDatails/$1';
+$route['listing/(:any)'] = 'Home/cateListing/$1';
 
 
 
