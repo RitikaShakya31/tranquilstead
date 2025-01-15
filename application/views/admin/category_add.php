@@ -46,18 +46,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!-- <div class="col-lg-12 mb-3">
-                                                <div class="row">
-                                                    <label for="example-text-input"
-                                                        class="col-md-3 col-form-label">Category
-                                                        Banner</label>
-                                                    <div class="col-md-9">
-                                                        <input class="form-control " type="file" name="banner"
-                                                            <?= $image == "" ? 'required' : '' ?>>
-                                                        <h6>Image Size: 1296*300</h6>
-                                                    </div>
-                                                </div>
-                                            </div> -->
                                             <div class="col-lg-12 mb-3">
                                                 <div class="row">
                                                     <label for="example-text-input"

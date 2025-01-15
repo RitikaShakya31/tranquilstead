@@ -130,6 +130,7 @@ class AdminDashboard extends CI_Controller
 		$id = $this->input->get('id');
 		extract($this->input->post());
 		$decrypt_id = decryptId($this->input->get('id'));
+		$data['image_all'] = $this->CommonModal->getRowById('subcat_images', "sub_category_id", $decrypt_id);
 		$get = $this->CommonModal->getSingleRowById('sub_category', "sub_category_id = '$decrypt_id'");
 		$data['sub_category_name'] = set_value('sub_category_name') == false ? @$get['sub_category_name'] : set_value('sub_category_name');
 		$data['sub_category_heading'] = set_value('sub_category_heading') == false ? @$get['sub_category_heading'] : set_value('sub_category_heading');
@@ -140,7 +141,7 @@ class AdminDashboard extends CI_Controller
 		if (isset($id)) {
 			$data['title'] = 'Edit Sub Category';
 		} else {
-			$data['title'] = 'Add Category';
+			$data['title'] = 'Add Sub Category';
 		}
 		if (isset($dID)) {
 			$update = $this->CommonModal->updateRowById('sub_category', 'sub_category_id', decryptId($dID), array('is_delete' => '0'));
@@ -166,10 +167,53 @@ class AdminDashboard extends CI_Controller
 				}
 				if (isset($id)) {
 					$update = $this->CommonModal->updateRowById('sub_category', 'sub_category_id', $decrypt_id, $post);
-					flashData('errors', 'Laboratory Update Successfully');
+					$filesCount = count($_FILES['moreimage']['name']);
+					if (isset($_FILES['moreimage']['name']) && !empty($_FILES['moreimage']['name'][0])) {
+						$filesCount = count($_FILES['moreimage']['name']);
+						for ($i = 0; $i < $filesCount; $i++) {
+							if (!empty($_FILES['moreimage']['name'][$i])) {
+								$extension = pathinfo($_FILES["moreimage"]["name"][$i], PATHINFO_EXTENSION);
+								$newFilename = round(microtime(true) * 1000) . '.' . $extension;
+								$_FILES['files']['name'] = $newFilename;
+								$_FILES['files']['type'] = $_FILES['moreimage']['type'][$i];
+								$_FILES['files']['tmp_name'] = $_FILES['moreimage']['tmp_name'][$i];
+								$_FILES['files']['error'] = $_FILES['moreimage']['error'][$i];
+								$_FILES['files']['size'] = $_FILES['moreimage']['size'][$i];
+								$picture = fullImage('files', 'upload/category/'); // इमेज सेविंग फंक्शन
+								if ($picture) {
+									$post3['image_path'] = $picture;
+									$post3['sub_category_id'] = isset($decrypt_id) ? $decrypt_id : $p_id;
+									$this->CommonModal->insertRow('subcat_images', $post3);
+								}
+							}
+						}
+					} else {
+						$file_error = "Please select at least one file to upload.";
+					}
+					flashData('errors', 'Subcategory Update Successfully');
 				} else {
-					$insert = $this->CommonModal->insertRow('sub_category', $post);
-					flashData('errors', 'Laboratory Add Successfully');
+					$p_id = $this->CommonModal->insertRowReturnIdWithClean('sub_category', $post);
+					$filesCount = count($_FILES['moreimage']['name']);
+					if ($filesCount > 0) {
+						for ($i = 0; $i < $filesCount; $i++) {
+							if ($_FILES['moreimage']['name'] != '') {
+								$extension = pathinfo($_FILES["moreimage"]["name"][$i], PATHINFO_EXTENSION);
+								$newFilename = round(microtime(true) * 1000);
+								$_FILES['files']['name'] = $newFilename . '.' . $extension;
+								$_FILES['files']['type'] = $_FILES['moreimage']['type'][$i];
+								$_FILES['files']['tmp_name'] = $_FILES['moreimage']['tmp_name'][$i];
+								$_FILES['files']['error'] = $_FILES['moreimage']['error'][$i];
+								$_FILES['files']['size'] = $_FILES['moreimage']['size'][$i];
+								$picture = fullImage('files', 'upload/subcat/');
+								if ($picture) {
+									$post2['image_path'] = $picture;
+									$post2['sub_category_id'] = $p_id;
+									$insert = $this->CommonModal->insertRow('subcat_images', $post2);
+								}
+							}
+						}
+					}
+					flashData('errors', 'Subcategory Add Successfully');
 				}
 				redirect('subcategory_all');
 			}
