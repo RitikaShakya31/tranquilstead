@@ -13,7 +13,7 @@ jobs:
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.3.2
         with:
-          server: ftp.1715232994231-mdh-resourceserver.org
+          server: 116.206.105.28
           username: ${{ secrets.SECRET_USERNAME }}
           password: ${{ secrets.SECRET_PASSWORD }}
           server-dir: /v1/
