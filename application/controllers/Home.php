@@ -6,7 +6,7 @@ class Home extends CI_Controller
     {
         $data['title'] = 'Home';
         $data['nashik'] = $this->CommonModal->getSingleRowById('nashik_blog', ['id' => '1']);
-        $data['cat'] = $this->CommonModal->getRowByOrderWithLimit('category', array('is_delete' => '1'), 'category_id', 'DESC', '20');
+        $data['cat'] = $this->CommonModal->getRowByOrderWithLimit('category', array('is_delete' => '1'), 'category_id', 'ASC', '20');
         $this->load->view('includes/header-link', $data);
         $this->load->view('includes/header');
         $this->load->view('home');
