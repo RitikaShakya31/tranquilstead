@@ -1,6 +1,46 @@
 <main id="main" role="main">
 	<div class="container-fluid">
 		<div class="row">
+			<div class="col-xs-12">
+				<div class="row">
+					<!-- main-gallery of the page -->
+					<section class="main-gallery">
+						<div class="mask">
+							<div class="slideset">
+								<?php
+								if ($cat) {
+									foreach ($cat as $c) {
+										?>
+										<div class="slide">
+											<div class="bg-stretch"><img src="<?= base_url('upload/category/') . $c['banner']?>" alt="<?= $c['category_name'] ?>" /></div>
+											<div class="post-over">
+												<div class="box">
+													<div class="block">
+														<h1 class="heading"><a
+																href="nashik"><?= $nashik['heading'] ?></a>
+														</h1>
+														<ul class="add-nav list-inline">
+															<li><a href="<?= base_url('listing/') . $c['category_id'] ?>"><?= $c['category_name'] ?></a></li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+
+									<?php }
+								} ?>
+
+							</div>
+						</div>
+						<a class="btn-prev" href="#"><i class="fa fa-angle-left"></i></a>
+						<a class="btn-next" href="#"><i class="fa fa-angle-right"></i></a>
+					</section>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid">
+		<div class="row">
 			<?php
 			if (!empty($cat)) {
 				$count = 0;

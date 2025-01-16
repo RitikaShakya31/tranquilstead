@@ -1,4 +1,3 @@
-
 <body>
 	<!-- main container of all the page elements -->
 	<div id="wrapper">
@@ -9,8 +8,8 @@
 				<div class="row">
 					<div class="col-xs-12">
 						<!-- logo of the page -->
-						<div class="logo"><a href="<?= base_url()?>"><img class="img-responsive"
-									src="<?= base_url()?>assets/images/Tranquilstead_Logo.png"></a></div>
+						<div class="logo"><a href="<?= base_url() ?>"><img class="img-responsive"
+									src="<?= base_url() ?>assets/images/Tranquilstead_Logo.png"></a></div>
 						<!-- nav of the page -->
 						<div id="nav">
 							<a href="#" class="nav-opener">
@@ -25,13 +24,17 @@
 									<button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
 								</form>
 								<ul class="list-inline">
-									<li>
-									</li>
-									<li><a href="religious.php">RELIGIOUS</a></li>
+									<?php if ($cat) {
+										foreach ($cat as $c) { ?>
+											<li><a href="<?= base_url('listing/') . $c['category_id']?>"><?= $c['category_name']?></a></li>
+											<?php
+										}
+									} ?>
+									<!-- <li><a href="religious.php">RELIGIOUS</a></li>
 									<li><a href="lifestyle.php">LIFESTYLE </a></li>
 									<li><a href="travel.php">TRAVELLING </a></li>
 									<li><a href="industry.php">INDUSTRY </a></li>
-									<li><a href="upcoming.php">UPCOMING PROJECTS </a></li>
+									<li><a href="upcoming.php">UPCOMING PROJECTS </a></li> -->
 								</ul>
 								<ul class="social-networks1 list-inline" style="font-size:30px">
 									<!-- <li><a href="#"><i class="fa fa-facebook"></i></a></li> -->
