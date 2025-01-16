@@ -11,13 +11,7 @@ class AdminDashboard extends CI_Controller
 		$data['title'] = 'Welcome! Admin';
 		$this->load->view('admin/index', $data);
 	}
-	public function nashik_blog()
-	{
-		// $get['category_all'] = $this->CommonModal->getRowByIdInOrder('category', "is_delete = '1'", 'category_name', 'ASC');
-		$get['title'] = 'Nashik Blog';
-		$get['projectTitle'] = 'Tranquil Stead';
-		$this->load->view('admin/nashik_blog', $get);
-	}
+
 	public function category_all()
 	{
 		$get['category_all'] = $this->CommonModal->getRowByIdInOrder('category', "is_delete = '1'", 'category_name', 'ASC');
@@ -229,6 +223,102 @@ class AdminDashboard extends CI_Controller
 		}
 		$data['setting'] = $this->setting;
 		$this->load->view('admin/sub_category_add', $data);
+	}
+
+	public function nashik_blog()
+	{
+		$data['title'] = 'Nashik Blog ';
+		$get = $this->CommonModal->getSingleRowById('nashik_blog', "id = '1'");
+		$data['image_all'] = $this->CommonModal->getRowByIdInOrder('nashik_images', [], 'id', 'DESC');
+		if (!$get) {
+			$postdata = [
+				'id' => 1,
+				'heading' => 'Why Nashik?',
+				'sub_heading' => ''
+			];
+			$this->CommonModal->insertRow('nashik_blog', $postdata);
+			$get = $this->CommonModal->getSingleRowById('nashik_blog', "id = '1'");
+		}
+		$data['heading'] = set_value('heading') == false ? @$get['heading'] : set_value('heading');
+		$data['sub_heading'] = set_value('sub_heading') == false ? @$get['sub_heading'] : set_value('sub_heading');
+		$data['description'] = set_value('description') == false ? @$get['description'] : set_value('description');
+		$data['effect_image'] = set_value('effect_image') == false ? @$get['effect_image'] : set_value('effect_image');
+		$data['banner_image'] = set_value('banner_image') == false ? @$get['banner_image'] : set_value('banner_image');
+		if (count($_POST) > 0) {
+			$this->form_validation->set_rules('heading', 'heading', 'required');
+			$this->form_validation->set_rules('sub_heading', 'sub_heading', 'required');
+			if ($this->form_validation->run()) {
+				$heading = $this->input->post('heading');
+				$sub_heading = $this->input->post('sub_heading');
+				$description = $this->input->post('description');
+
+				// Collect hidden field data for previous images
+				$prev_banner_image = $this->input->post('banner_image');
+				$prev_effect_image = $this->input->post('effect_image');
+
+				$postdata = [
+					'heading' => $heading,
+					'sub_heading' => $sub_heading,
+					'description' => $description,
+				];
+
+				// Handle Banner Image
+				if (isset($_FILES['banner_image']) && !empty($_FILES['banner_image']['name'])) {
+					$picture = imageUploadWithRatio('banner_image', 'upload/category/', 600, 400);
+					if ($picture) {
+						$postdata['banner_image'] = $picture;
+					}
+				} else {
+					// Retain the previous image if no new file is uploaded
+					$postdata['banner_image'] = $prev_banner_image;
+				}
+
+				// Handle Effect Image
+				if (isset($_FILES['effect_image']) && !empty($_FILES['effect_image']['name'])) {
+					$picture2 = imageUploadWithRatio('effect_image', 'upload/category/', 600, 400);
+					if ($picture2) {
+						$postdata['effect_image'] = $picture2;
+					}
+				} else {
+					// Retain the previous image if no new file is uploaded
+					$postdata['effect_image'] = $prev_effect_image;
+				}
+
+				// Handle multiple images for `moreimage[]`
+				$filesCount = count($_FILES['moreimage']['name']);
+				if ($filesCount > 0) {
+					for ($i = 0; $i < $filesCount; $i++) {
+						if ($_FILES['moreimage']['name'][$i] != '') {
+							$extension = pathinfo($_FILES["moreimage"]["name"][$i], PATHINFO_EXTENSION);
+							$newFilename = round(microtime(true) * 1000);
+							$_FILES['files']['name'] = $newFilename . '.' . $extension;
+							$_FILES['files']['type'] = $_FILES['moreimage']['type'][$i];
+							$_FILES['files']['tmp_name'] = $_FILES['moreimage']['tmp_name'][$i];
+							$_FILES['files']['error'] = $_FILES['moreimage']['error'][$i];
+							$_FILES['files']['size'] = $_FILES['moreimage']['size'][$i];
+							$picture = fullImage('files', 'upload/subcat/');
+							if ($picture) {
+								$post2['image'] = $picture;
+								$this->CommonModal->insertRow('nashik_images', $post2);
+							}
+						}
+					}
+				}
+
+				// Update database
+				$update = $this->CommonModal->updateRowById('nashik_blog', 'id', 1, $postdata);
+
+				if ($update) {
+					flashData('errors', 'Updates Successfully');
+					redirect('nashik_blog');
+				} else {
+					flashData('errors', 'Something went wrong');
+					redirect('nashik_blog');
+				}
+			}
+		}
+
+		$this->load->view('admin/nashik_blog', $data);
 	}
 
 }
