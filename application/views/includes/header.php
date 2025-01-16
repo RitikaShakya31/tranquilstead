@@ -30,20 +30,13 @@
 											<?php
 										}
 									} ?>
-									<!-- <li><a href="religious.php">RELIGIOUS</a></li>
-									<li><a href="lifestyle.php">LIFESTYLE </a></li>
-									<li><a href="travel.php">TRAVELLING </a></li>
-									<li><a href="industry.php">INDUSTRY </a></li>
-									<li><a href="upcoming.php">UPCOMING PROJECTS </a></li> -->
 								</ul>
 								<ul class="social-networks1 list-inline" style="font-size:30px">
-									<!-- <li><a href="#"><i class="fa fa-facebook"></i></a></li> -->
 									<li><a
 											href="https://www.instagram.com/tranquilstead.in/profilecard/?igsh=MWQycWd1MmI0eTNqMg=="><i
 												class="fa-brands fa-square-instagram"></i></a></li>
-									<!-- <li><a href="#"><i class="fa fa-google-plus"></i></a></li> -->
 								</ul>
-								<span class="copyrights">&copy; 2024 <a href="#">Tranquilstead</a>. All rights
+								<span class="copyrights">&copy; 2025 <a href="#">Tranquilstead</a>. All rights
 									reserved.</span>
 							</div>
 						</div>

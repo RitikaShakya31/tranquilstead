@@ -9,10 +9,6 @@
 						<?php
 					}
 				} ?>
-				<!-- <li><a href="travel.php">Travel</a></li>
-				<li><a href="lifeStyle.php">Life Style</a></li>
-				<li><a href="industry.php">Industry</a></li>
-				<li><a href="religious.php">Religious</a></li> -->
 			</ul>
 		</div>
 		<div class="col-sm-4 col-xs-12 column social">
@@ -23,7 +19,7 @@
 				<p></p><br><br>
 			</div>
 		</div>
-		<div class="copy" style="margin:55px 0">&copy; 2024 <a href="<?= base_url() ?>" style="color:red">Tranquil
+		<div class="copy" style="margin:55px 0">&copy; 2025 <a href="<?= base_url() ?>" style="color:red">Tranquil
 				Stead</a>. All
 			rights reserved.</div>
 	</aside>

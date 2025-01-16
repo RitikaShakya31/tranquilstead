@@ -6,7 +6,11 @@
                     <div class="mask">
                         <div class="slideset">
                             <div class="slide">
-                                <div class="bg-stretch"><img src="<?= base_url('upload/category/') . $getCat['banner'] ?>" alt="image description" />
+                                <div class="bg-stretch">
+                                    <img src="<?= base_url('upload/category/') . $getCat['banner'] ?>" alt="image description" />
+
+                                    <img src="<?= !empty($getCat['banner']) ? base_url('upload/category/') . $getCat['banner'] : base_url('assets/images/default.jpg'); ?>"
+													alt="<?= $c['category_name']; ?>" />
                                 </div>
                                 <div class="post-over">
                                     <div class="box">

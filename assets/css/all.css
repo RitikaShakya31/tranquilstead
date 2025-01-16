@@ -115,7 +115,7 @@ Primary use:	Company Portfolio
     object-fit: cover;
 }
 .post-images .img-box2 img {
-	/* width: 100%; */
+	width: 100%;
 	display: block;
 	height: 460px;
 }
@@ -4327,6 +4327,7 @@ Primary use:	Company Portfolio
 .post-images .img-box {
 	overflow: hidden;
 	margin: 1.2% 0 0;
+	width: 106%;
 }
 
 .post-images .img-box:first-child {
@@ -4335,7 +4336,7 @@ Primary use:	Company Portfolio
 
 .post-images .img-box2 {
 	/* float: right; */
-	width: 65.8%;
+	/* width: 65.8%; */
 }
 
 .post-images .img-box a,
@@ -5030,6 +5031,7 @@ Primary use:	Company Portfolio
 
 	.three-cols .banner-gallery {
 		height: 300px;
+		width: 94%;
 	}
 
 	.three-cols .add-nav {
@@ -5102,6 +5104,20 @@ Primary use:	Company Portfolio
 		padding: 6px 25px 0 0;
 	}
 
+	.post-images .img-box2 img {
+		width: 100%;
+		display: block;
+		height: 160px;
+	}
+	.nav-posts .banner-gallery img, .post-images .img-box img {
+		width: 100%;
+		display: block;
+		height: 79px;
+		object-fit: cover;
+	}
+	.post-images .img-box {
+		width: 128%;
+	}
 	#nav2 {
 		padding: 6px 15px 0 0;
 	}

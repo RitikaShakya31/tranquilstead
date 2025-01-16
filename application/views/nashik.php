@@ -15,8 +15,6 @@
                                 <div class="block">
                                     <h1><a href="#"><?= $nashik['heading'] ?></a></h1>
                                     <ul class="add-nav list-inline">
-                                        <!-- <li>by <a href="#">Admin</a></li>
-                                        <li><time datetime="2024-01-08">Aug 01, 2024</time></li> -->
                                         <li><a href="#"><?= $nashik['sub_heading'] ?></a></li>
                                     </ul>
                                 </div>

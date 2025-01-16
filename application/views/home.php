@@ -73,8 +73,8 @@
 													<div class="post-over">
 														<div class="box">
 															<div class="block">
-																<h2><a
-																		href="<?= base_url('listing/') . $c['category_id'] ?>"><?= strtoupper($c['category_name']); ?></a>
+																<h2>
+																	<a href="<?= base_url('listing/') . $c['category_id'] ?>"><?= strtoupper($c['category_name']); ?></a>
 																</h2>
 																<ul class="add-nav list-inline">
 																	<li><a
@@ -95,8 +95,7 @@
 												<div class="post-over">
 													<div class="box">
 														<div class="block">
-															<h2><a
-																	href="<?= strtolower(str_replace(' ', '_', $c['category_name'])); ?>.php"><?= strtoupper($c['category_name']); ?></a>
+															<h2><a href="<?= base_url('listing/') . $c['category_id'] ?>"><?= strtoupper($c['category_name']); ?></a></a>
 															</h2>
 															<ul class="add-nav list-inline">
 																<li><a href="#"><?= $c['sub_name']; ?></a></li>
