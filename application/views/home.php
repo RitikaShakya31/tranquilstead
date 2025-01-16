@@ -12,15 +12,20 @@
 									foreach ($cat as $c) {
 										?>
 										<div class="slide">
-											<div class="bg-stretch"><img src="<?= base_url('upload/category/') . $c['banner']?>" alt="<?= $c['category_name'] ?>" /></div>
+											<div class="bg-stretch">
+												<img src="<?= !empty($c['banner']) ? base_url('upload/category/') . $c['banner'] : base_url('assets/images/default.jpg'); ?>"
+													alt="<?= $c['category_name']; ?>" />
+
+											</div>
 											<div class="post-over">
 												<div class="box">
 													<div class="block">
-														<h1 class="heading"><a
-																href="nashik"><?= $nashik['heading'] ?></a>
+														<h1 class="heading"><a href="nashik"><?= $nashik['heading'] ?></a>
 														</h1>
 														<ul class="add-nav list-inline">
-															<li><a href="<?= base_url('listing/') . $c['category_id'] ?>"><?= $c['category_name'] ?></a></li>
+															<li><a
+																	href="<?= base_url('listing/') . $c['category_id'] ?>"><?= $c['category_name'] ?></a>
+															</li>
 														</ul>
 													</div>
 												</div>

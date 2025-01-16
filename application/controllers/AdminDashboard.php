@@ -26,7 +26,6 @@ class AdminDashboard extends CI_Controller
 		$id = $this->input->get('id');
 		$dID = $this->input->get('dID');
 		$decrypt_id = decryptId($this->input->get('id'));
-		$data['image_all'] = $this->CommonModal->getRowById('slider_image', "category_id", $decrypt_id);
 		$get = $this->CommonModal->getSingleRowById('category', "category_id = '$decrypt_id'");
 		$data['category_name'] = set_value('category_name') == false ? @$get['category_name'] : set_value('category_name');
 		$data['sub_name'] = set_value('sub_name') == false ? @$get['sub_name'] : set_value('sub_name');
@@ -54,52 +53,52 @@ class AdminDashboard extends CI_Controller
 				}
 				if (isset($id)) {
 					$update = $this->CommonModal->updateRowById('category', 'category_id', $decrypt_id, $post);
-					$filesCount = count($_FILES['image']['name']);
-					if (isset($_FILES['image']['name']) && !empty($_FILES['image']['name'][0])) {
-						$filesCount = count($_FILES['image']['name']);
-						for ($i = 0; $i < $filesCount; $i++) {
-							if (!empty($_FILES['image']['name'][$i])) { // चेक करें कि फाइल खाली नहीं है
-								$extension = pathinfo($_FILES["image"]["name"][$i], PATHINFO_EXTENSION);
-								$newFilename = round(microtime(true) * 1000) . '.' . $extension;
-								$_FILES['files']['name'] = $newFilename;
-								$_FILES['files']['type'] = $_FILES['image']['type'][$i];
-								$_FILES['files']['tmp_name'] = $_FILES['image']['tmp_name'][$i];
-								$_FILES['files']['error'] = $_FILES['image']['error'][$i];
-								$_FILES['files']['size'] = $_FILES['image']['size'][$i];
-								$picture = fullImage('files', 'upload/category/'); // इमेज सेविंग फंक्शन
-								if ($picture) {
-									$post3['image_path'] = $picture;
-									$post3['category_id'] = isset($decrypt_id) ? $decrypt_id : $p_id;
-									$this->CommonModal->insertRow('slider_image', $post3);
-								}
-							}
-						}
-					} else {
-						$file_error = "Please select at least one file to upload.";
-					}
+					// $filesCount = count($_FILES['image']['name']);
+					// if (isset($_FILES['image']['name']) && !empty($_FILES['image']['name'][0])) {
+					// 	$filesCount = count($_FILES['image']['name']);
+					// 	for ($i = 0; $i < $filesCount; $i++) {
+					// 		if (!empty($_FILES['image']['name'][$i])) { // चेक करें कि फाइल खाली नहीं है
+					// 			$extension = pathinfo($_FILES["image"]["name"][$i], PATHINFO_EXTENSION);
+					// 			$newFilename = round(microtime(true) * 1000) . '.' . $extension;
+					// 			$_FILES['files']['name'] = $newFilename;
+					// 			$_FILES['files']['type'] = $_FILES['image']['type'][$i];
+					// 			$_FILES['files']['tmp_name'] = $_FILES['image']['tmp_name'][$i];
+					// 			$_FILES['files']['error'] = $_FILES['image']['error'][$i];
+					// 			$_FILES['files']['size'] = $_FILES['image']['size'][$i];
+					// 			$picture = fullImage('files', 'upload/category/'); // इमेज सेविंग फंक्शन
+					// 			if ($picture) {
+					// 				$post3['image_path'] = $picture;
+					// 				$post3['category_id'] = isset($decrypt_id) ? $decrypt_id : $p_id;
+					// 				$this->CommonModal->insertRow('slider_image', $post3);
+					// 			}
+					// 		}
+					// 	}
+					// } else {
+					// 	$file_error = "Please select at least one file to upload.";
+					// }
 					flashData('errors', 'Category Update Successfully');
 				} else {
 					$p_id = $this->CommonModal->insertRowReturnIdWithClean('category', $post);
-					$filesCount = count($_FILES['image']['name']);
-					if ($filesCount > 0) {
-						for ($i = 0; $i < $filesCount; $i++) {
-							if ($_FILES['image']['name'] != '') {
-								$extension = pathinfo($_FILES["image"]["name"][$i], PATHINFO_EXTENSION);
-								$newFilename = round(microtime(true) * 1000);
-								$_FILES['files']['name'] = $newFilename . '.' . $extension;
-								$_FILES['files']['type'] = $_FILES['image']['type'][$i];
-								$_FILES['files']['tmp_name'] = $_FILES['image']['tmp_name'][$i];
-								$_FILES['files']['error'] = $_FILES['image']['error'][$i];
-								$_FILES['files']['size'] = $_FILES['image']['size'][$i];
-								$picture = fullImage('files', 'upload/category/');
-								if ($picture) {
-									$post2['image_path'] = $picture;
-									$post2['category_id'] = $p_id;
-									$insert = $this->CommonModal->insertRow('slider_image', $post2);
-								}
-							}
-						}
-					}
+					// $filesCount = count($_FILES['image']['name']);
+					// if ($filesCount > 0) {
+					// 	for ($i = 0; $i < $filesCount; $i++) {
+					// 		if ($_FILES['image']['name'] != '') {
+					// 			$extension = pathinfo($_FILES["image"]["name"][$i], PATHINFO_EXTENSION);
+					// 			$newFilename = round(microtime(true) * 1000);
+					// 			$_FILES['files']['name'] = $newFilename . '.' . $extension;
+					// 			$_FILES['files']['type'] = $_FILES['image']['type'][$i];
+					// 			$_FILES['files']['tmp_name'] = $_FILES['image']['tmp_name'][$i];
+					// 			$_FILES['files']['error'] = $_FILES['image']['error'][$i];
+					// 			$_FILES['files']['size'] = $_FILES['image']['size'][$i];
+					// 			$picture = fullImage('files', 'upload/category/');
+					// 			if ($picture) {
+					// 				$post2['image_path'] = $picture;
+					// 				$post2['category_id'] = $p_id;
+					// 				$insert = $this->CommonModal->insertRow('slider_image', $post2);
+					// 			}
+					// 		}
+					// 	}
+					// }
 					flashData('errors', 'Category Add Successfully');
 				}
 				redirect('category_all');
@@ -113,6 +112,12 @@ class AdminDashboard extends CI_Controller
 	{
 		$delete = $this->CommonModal->deleteRowById('slider_image', "category_id = '" . decryptId($id) . "'");
 		unlink('upload/category/' . $img);
+		redirect($_SERVER['HTTP_REFERER']);
+	}
+	public function subCatImageD($id, $img)
+	{
+		$delete = $this->CommonModal->deleteRowById('subcat_images', "id = '" . $id . "'");
+		unlink('upload/subcat/' . $img);
 		redirect($_SERVER['HTTP_REFERER']);
 	}
 

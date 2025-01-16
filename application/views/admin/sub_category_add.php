@@ -89,13 +89,13 @@
                                                 if ($image_all) {
                                                     foreach ($image_all as $img) {
                                                         $numImage = getNumRows('slider_image', "category_id = '" . decryptId($id) . "'");
-                                                        $imgId = ($img['category_id']);
+                                                        $imgId = ($img['id']);
                                                         $imgData = $img['image_path'];
                                                         ?>
                                                         <div class="col-lg-4 mb-2">
                                                             <div
                                                                 style="width: 100%; border: 1px solid #aeaeae; border-radius: 5px">
-                                                                <img src="<?= base_url("upload/category/") . $imgData ?>"
+                                                                <img src="<?= base_url("upload/subcat/") . $imgData ?>"
                                                                     style="width: 100%;height: 180px; margin-top: 10px">
                                                                 <div style="margin-top: 10px; text-align: center">
                                                                     <?php
@@ -103,7 +103,7 @@
                                                                         ?>
                                                                         <a class="btn btn-danger" style="margin-right: 5px"
                                                                             onclick="return confirm('Are you sure to delete this image?')"
-                                                                            href="<?= base_url("productImageD/$imgId/$imgData") ?>">
+                                                                            href="<?= base_url("subCatImageD/$imgId/$imgData") ?>">
                                                                             <i class="fa fa-trash"></i> Delete
                                                                         </a>
                                                                         <?php

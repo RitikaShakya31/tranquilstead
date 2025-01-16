@@ -15,4 +15,5 @@
 	<!-- include the site stylesheet -->
 	<link type="text/css" rel="stylesheet" media="all" href="<?= base_url()?>assets/css/all.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+	<link rel="shortcut icon" href="<?= base_url() ?>assets/images/fav.png" type="image/x-icon">
 </head>

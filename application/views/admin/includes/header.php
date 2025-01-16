@@ -7,9 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta content="EMW" name="author" />
 	<!-- App favicon -->
-	<!-- <link rel="shortcut icon" href="<?= base_url() ?>assets/admin/images/digitallogo.png" /> -->
-    <link rel="shortcut icon" href="image/fevicon.png" type="image/x-icon">
-	<link rel=" icshortcuton" href="image/fevicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="<?= base_url() ?>assets/images/fav.png" type="image/x-icon">
 
 	<!-- Bootstrap Css -->
 	<link href="<?= base_url() ?>assets/admin/css/bootstrap.min.css" rel="stylesheet" type="text/css" />

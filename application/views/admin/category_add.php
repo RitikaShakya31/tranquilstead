@@ -56,7 +56,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-12 mb-3">
+                                            <!-- <div class="col-lg-12 mb-3 d-none">
                                                 <div class="row">
                                                     <label for="example-text-input"
                                                         class="col-md-3 col-form-label">Slider Images
@@ -66,10 +66,9 @@
                                                             <?= isset($id) ? '' : 'required' ?> name="image[]">
                                                     </div>
                                                 </div>
-                                            </div>
-                                          
+                                            </div>                                           -->
                                         </div>
-                                        <div class="col-lg-12  mt-2">
+                                        <!-- <div class="col-lg-12  mt-2 d-none">
                                             <div class="row">
                                                 <?php
                                                 if ($image_all) {
@@ -103,7 +102,7 @@
                                                 }
                                                 ?>
                                             </div>
-                                        </div>
+                                        </div> -->
                                         <div class="text-center">
                                             <button type="submit" id="save" class="btn btn-primary w-md">Save</button>
                                         </div>
