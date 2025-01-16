@@ -1,7 +1,8 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-$config['base_url'] = 'http://localhost/tranquilsteadCI/';
+$config['base_url'] = 'https://tranquilstead.in/v1/';
+// $config['base_url'] = 'http://localhost/tranquilsteadCI/';
 
 $config['index_page'] = '';
 

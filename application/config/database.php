@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-$active_group = 'local';
+$active_group = 'server';
 $query_builder = TRUE;
 
 $db['local'] = array(
@@ -30,11 +30,11 @@ $db['local'] = array(
 $db['server'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
-	'username' => '',
-	'password' => '',
-	'database' => '',
+	'username' => 'a1715hhz_tranquilstead',
+	'password' => 'WIPGf;ayYSm=',
+	'database' => 'a1715hhz_tranquilstead',
 	'dbdriver' => 'mysqli',
-	'dbprefix' => 'tbl_',
+	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
 	'cache_on' => FALSE,
