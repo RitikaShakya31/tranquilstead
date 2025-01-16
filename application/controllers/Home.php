@@ -32,7 +32,7 @@ class Home extends CI_Controller
         $catId = $data['getCat']['category_id'];
         $data['cat'] = $this->CommonModal->getRowByOrderWithLimit('category', array('is_delete' => '1'), 'category_id', 'DESC', '20');
         $data['getSub'] = $this->CommonModal->getSingleRowById('sub_category', ['category_id' => $catId]);
-        $data['allsub'] = $this->CommonModal->getRowByMoreId('sub_category', ['category_id' => $id]);
+        $data['allsub'] = $this->CommonModal->getRowByMoreId('sub_category', ['category_id' => $id, 'is_delete' => '1']);
         $this->load->view('includes/header-link', $data);
         $this->load->view('includes/header');
         $this->load->view('listing');
