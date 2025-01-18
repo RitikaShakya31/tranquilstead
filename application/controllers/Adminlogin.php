@@ -3,13 +3,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Adminlogin extends CI_Controller
 {
-    public function __construct()
-    {
-        parent::__construct();
-        if (sessionId('user_id') != "") {
-            redirect(base_url("AdminDashboard"));
-        }
-    }
     public function index()
     {
         $data['title'] = 'Admin login  ';
@@ -25,7 +18,7 @@ class Adminlogin extends CI_Controller
             if ($user_id) {
                 if ($user_id[0]['password'] == $password) {
                     $this->session->set_userdata('user_id', $user_id[0]['id']);
-                    $this->session->set_userdata('user_type', $user_id[0]['admin_type']);
+                    $this->session->set_userdata('user_email', $user_id[0]['email']);
                     redirect('AdminDashboard');
                 } else {
                     $this->session->set_userdata('msg', '<div class="alert alert-danger">Invalid Password</div>');
@@ -36,4 +29,12 @@ class Adminlogin extends CI_Controller
             redirect(base_url('admin'));
         }
     }
+
+    public function logout()
+    {
+        $this->session->unset_userdata('user_id');
+        $this->session->unset_userdata('user_email');
+        redirect(base_url('admin'));
+    }
+    
 }

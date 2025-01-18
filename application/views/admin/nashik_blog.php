@@ -56,7 +56,6 @@
                                                 <label class="form-label">More Images</label>
                                                 <input class="form-control" type="file" multiple name="moreimage[]">
                                             </div>
-
                                         </div>
                                         <div class="row">
                                             <?php if ($image_all) {
@@ -73,7 +72,7 @@
                                                                 <?php if ($numImage != 1) { ?>
                                                                     <a class="btn btn-danger" style="margin-right: 5px"
                                                                         onclick="return confirm('Are you sure to delete this image?')"
-                                                                        href="<?= base_url("productImageD/$imgId/$imgData") ?>">
+                                                                        href="<?= base_url("ImageD/$imgId/$imgData") ?>">
                                                                         <i class="fa fa-trash"></i> Delete
                                                                     </a>
                                                                 <?php } ?>

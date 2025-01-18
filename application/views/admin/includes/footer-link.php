@@ -52,7 +52,20 @@
     }
     ?>
 </script>
-
+<script>
+    <?php
+    if (sessionId('success_status')) {
+        ?>
+        Swal.fire({
+            title: '<?= sessionId('success_status') ?>!',
+            text: '<?= sessionId('msg') ?>',
+            icon: '<?= sessionId('success_status') ?>',
+            confirmButtonText: 'Done'
+        })
+        <?php
+    }
+    ?>
+</script>
 
 <script>
 	ClassicEditor

@@ -17,6 +17,11 @@ function convertDatedmyhis($dt)
 {
 	return date("d-m-Y H:i s", strtotime($dt));
 }
+function flashMultiData($vardata)
+{
+	$ci = &get_instance();
+	return $ci->session->set_flashdata($vardata);
+}
 function dateDiffInDays($date1, $date2)
 {
 	$diff = strtotime($date2) - strtotime($date1);
@@ -481,36 +486,6 @@ function sendNotificationUser($device_id, $title, $message)
 	return $results;
 }
 
-function sendEmail($host, $username, $password, $fromName, $sendToEmail, $subject, $mail_body)
-{
-
-	// base_url = "http://bmcpmaybooking.com/"; 
-	// host = 'mail.bmcpmaybooking.com'; 
-	// username = 'bookingverification@bmcpmaybooking.com';  
-	// password = "j(*0d%z@OKLR";
-	require '././php/class/class.phpmailer.php';
-	$base_url = base_url();
-	$mail = new PHPMailer;
-	$mail->IsSMTP();
-	$mail->Host = $host;
-	$mail->Port = '587';
-	$mail->SMTPAuth = true;
-	$mail->Username = $username;
-	$mail->Password = $password;
-	$mail->SMTPSecure = '';
-	$mail->From = $username;
-	$mail->FromName = $fromName;
-	$mail->AddAddress($sendToEmail);
-	$mail->WordWrap = 50;
-	$mail->IsHTML(true);
-	$mail->Subject = $subject;
-	$mail->Body = $mail_body;
-	if ($mail->Send()) {
-		return true;
-	} else {
-		return false;
-	}
-}
 
 function SMSSend($phone, $msg, $template, $debug = false)
 {

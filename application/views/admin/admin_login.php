@@ -27,7 +27,6 @@
                                         <input type="email" class="form-control" id="admin_email" name="email"
                                             placeholder="Enter username" />
                                     </div>
-
                                     <div class="mb-3">
                                         <label class="form-label">Password</label>
                                         <div class="input-group auth-pass-inputgroup">
@@ -39,7 +38,6 @@
                                             </button>
                                         </div>
                                     </div>
-
                                     <div class="mt-3 d-grid">
                                         <button style="background: #306d69;border:none;"
                                             class="btn btn-primary waves-effect waves-light" type="submit">
@@ -50,14 +48,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="mt-5 text-center">
-                        <div>
-                            <p>
-                                Don't have an account ?
-                                <a href="#" class="fw-medium text-primary"> Signup now </a>
-                            </p>
-                        </div>
-                    </div> -->
                 </div>
             </div>
         </div>

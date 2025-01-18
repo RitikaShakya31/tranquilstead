@@ -68,8 +68,8 @@
                                                         name="effect_image" <?= $image == "" ? 'required' : '' ?>>
                                                 </div>
                                                 <img class="temp_image" src="<?= base_url('upload/subcat') . '/' . $effect_image ?>"
-                                            style=" height:100px;">
-                                        <input type="hidden" value="<?= $image ?>" name="temp_image">
+                                                 style=" height:100px;">
+                                                <input type="hidden" value="<?= $image ?>" name="temp_image">
                                             </div>
                                             <div class="col-lg-6 mb-3">
                                                 <div class="row">
@@ -78,7 +78,7 @@
                                                     </label>
                                                     <div class="col-md-9">
                                                         <input class="form-control" type="file" multiple
-                                                            <?= isset($id) ? '' : 'required' ?> name="moreimage[]">
+                                                            <?= isset($id) ? '' : '' ?> name="moreimage[]">
                                                     </div>
                                                 </div>
                                             </div>

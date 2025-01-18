@@ -76,7 +76,7 @@ class AdminDashboard extends CI_Controller
 					// } else {
 					// 	$file_error = "Please select at least one file to upload.";
 					// }
-					flashData('errors', 'Category Update Successfully');
+					flashMultiData(['success_status' => "success", 'msg' => "Category Updated Successfully"]);
 				} else {
 					$p_id = $this->CommonModal->insertRowReturnIdWithClean('category', $post);
 					// $filesCount = count($_FILES['image']['name']);
@@ -99,7 +99,7 @@ class AdminDashboard extends CI_Controller
 					// 		}
 					// 	}
 					// }
-					flashData('errors', 'Category Add Successfully');
+					flashMultiData(['success_status' => "success", 'msg' => " Category Add Successfully"]);
 				}
 				redirect('category_all');
 			}
@@ -108,10 +108,10 @@ class AdminDashboard extends CI_Controller
 		$this->load->view('admin/category_add', $data);
 	}
 
-	public function productImageD($id, $img)
+	public function ImageD($id, $img)
 	{
-		$delete = $this->CommonModal->deleteRowById('slider_image', "category_id = '" . decryptId($id) . "'");
-		unlink('upload/category/' . $img);
+		$delete = $this->CommonModal->deleteRowById('nashik_images', "id = '" . $id . "'");
+		unlink('upload/subcat/' . $img);
 		redirect($_SERVER['HTTP_REFERER']);
 	}
 	public function subCatImageD($id, $img)
@@ -198,7 +198,7 @@ class AdminDashboard extends CI_Controller
 					} else {
 						$file_error = "Please select at least one file to upload.";
 					}
-					flashData('errors', 'Subcategory Update Successfully');
+					flashMultiData(['success_status' => "success", 'msg' => " Subcategory Update Successfully"]);
 				} else {
 					$p_id = $this->CommonModal->insertRowReturnIdWithClean('sub_category', $post);
 					$filesCount = count($_FILES['moreimage']['name']);
@@ -221,7 +221,7 @@ class AdminDashboard extends CI_Controller
 							}
 						}
 					}
-					flashData('errors', 'Subcategory Add Successfully');
+					flashMultiData(['success_status' => "success", 'msg' => " Subcategory Add Successfully"]);
 				}
 				redirect('subcategory_all');
 			}
@@ -314,10 +314,10 @@ class AdminDashboard extends CI_Controller
 				$update = $this->CommonModal->updateRowById('nashik_blog', 'id', 1, $postdata);
 
 				if ($update) {
-					flashData('errors', 'Updates Successfully');
+					flashMultiData(['success_status' => "success", 'msg' => " Updated Successfully"]);
 					redirect('nashik_blog');
 				} else {
-					flashData('errors', 'Something went wrong');
+					flashMultiData(['success_status' => "error", 'msg' => "Something went wrong."]);
 					redirect('nashik_blog');
 				}
 			}
@@ -325,5 +325,8 @@ class AdminDashboard extends CI_Controller
 
 		$this->load->view('admin/nashik_blog', $data);
 	}
+
+
+
 
 }
